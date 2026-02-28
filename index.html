@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Awesome Tanks: Local Duel</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="panel setup-panel" id="setupPanel">
+        <h1>Awesome Tanks: Local Duel</h1>
+        <p class="subtitle">Pick your loadout and upgrades, then battle head-to-head.</p>
+
+        <div class="setup-grid">
+          <div class="player-card p1">
+            <h2>Player 1 (WASD + E)</h2>
+            <label for="p1Weapon">Starting weapon</label>
+            <select id="p1Weapon"></select>
+            <div class="upgrade-grid" id="p1Upgrades"></div>
+            <p class="points" id="p1Points"></p>
+          </div>
+
+          <div class="player-card p2">
+            <h2>Player 2 (Arrows + P)</h2>
+            <label for="p2Weapon">Starting weapon</label>
+            <select id="p2Weapon"></select>
+            <div class="upgrade-grid" id="p2Upgrades"></div>
+            <p class="points" id="p2Points"></p>
+          </div>
+        </div>
+
+        <button id="startBtn">Start Match</button>
+        <p class="hint">Weapons are locked after match start. Move to aim; shots fire in your last move direction.</p>
+      </section>
+
+      <section class="panel game-panel hidden" id="gamePanel">
+        <div class="hud">
+          <div id="p1Hud"></div>
+          <div id="status">First to 5 KOs wins.</div>
+          <div id="p2Hud" class="right"></div>
+        </div>
+        <canvas id="gameCanvas" width="1000" height="620"></canvas>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
