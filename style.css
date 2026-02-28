@@ -1,0 +1,153 @@
+:root {
+  color-scheme: dark;
+  --bg: #10131c;
+  --panel: #1a2131;
+  --line: #3a4667;
+  --accent: #73f2d7;
+  --accent2: #fbc15e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  background: radial-gradient(circle at top, #202a40 0%, var(--bg) 45%);
+  color: #f4f8ff;
+}
+
+.layout {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.panel {
+  background: rgba(26, 33, 49, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+.subtitle,
+.hint {
+  color: #b9c3db;
+}
+
+.setup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.player-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9rem;
+  background: rgba(11, 16, 26, 0.45);
+}
+
+.player-card.p1 h2 {
+  color: var(--accent);
+}
+
+.player-card.p2 h2 {
+  color: var(--accent2);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+select,
+button {
+  border-radius: 8px;
+  border: 1px solid #52608c;
+  background: #0f1628;
+  color: #f4f8ff;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+}
+
+.upgrade-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.upgrade-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.upgrade-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.upgrade-controls button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+}
+
+.points {
+  margin: 0.7rem 0 0;
+  font-size: 0.95rem;
+  color: #9ab0e3;
+}
+
+.hidden {
+  display: none;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.hud .right {
+  text-align: right;
+}
+
+#status {
+  font-weight: 600;
+  color: #ccd9ff;
+}
+
+#gameCanvas {
+  width: 100%;
+  max-height: 70vh;
+  border-radius: 10px;
+  border: 1px solid #495781;
+  background: #090d17;
+}
+
+@media (max-width: 900px) {
+  .setup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hud {
+    flex-direction: column;
+  }
+}
